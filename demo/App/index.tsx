@@ -1,9 +1,9 @@
-import React, { FC, useState, useRef } from "react";
-import { Global, css } from "@emotion/core";
-import normalize from "normalize.css";
+import React, {FC, useState, useRef} from 'react'
+import {Global, css} from '@emotion/core'
+import normalize from 'normalize.css'
 
-import GitHubCorner from "../GitHubCorner";
-import useDimensions from "../../src";
+import GitHubCorner from '../GitHubCorner'
+import useDimensions from '../../src'
 import {
   root,
   container,
@@ -17,56 +17,56 @@ import {
   cardWrapper,
   card,
   controller,
-} from "./styles";
+} from './styles'
 
 const App: FC<{}> = () => {
-  const [size, setSize] = useState<{ w: number; h: number }>({
+  const [size, setSize] = useState<{w: number; h: number}>({
     w: 250,
     h: 300,
-  });
-  const ref = useRef<HTMLDivElement>();
-  const { currentBreakpoint, width, height } = useDimensions(ref, {
-    breakpoints: { SM: 0, MD: 350, LG: 600 },
-  });
+  })
+  const ref = useRef<HTMLDivElement>()
+  const {currentBreakpoint, width, height} = useDimensions(ref, {
+    breakpoints: {SM: 0, MD: 350, LG: 600},
+  })
 
   const resize = (x: number, y: number): void => {
-    const { left: offsetX, top: offsetY } = ref.current.getBoundingClientRect();
-    setSize({ w: x - offsetX, h: y - offsetY });
-  };
+    const {left: offsetX, top: offsetY} = ref.current.getBoundingClientRect()
+    setSize({w: x - offsetX, h: y - offsetY})
+  }
 
   const handleMouseMove = (e: MouseEvent): void => {
-    e.preventDefault();
-    resize(e.pageX, e.pageY);
-  };
+    e.preventDefault()
+    resize(e.pageX, e.pageY)
+  }
 
   const handleTouchMove = (e: TouchEvent): void => {
-    resize(e.touches[0].pageX, e.touches[0].pageY);
-  };
+    resize(e.touches[0].pageX, e.touches[0].pageY)
+  }
 
   const handleDragStart = (): void => {
-    if (typeof window.ontouchstart === "undefined") {
-      document.addEventListener("mousemove", handleMouseMove);
+    if (typeof window.ontouchstart === 'undefined') {
+      document.addEventListener('mousemove', handleMouseMove)
       document.addEventListener(
-        "mouseup",
+        'mouseup',
         () => {
-          document.removeEventListener("mousemove", handleMouseMove);
+          document.removeEventListener('mousemove', handleMouseMove)
         },
-        { once: true }
-      );
+        {once: true},
+      )
     } else {
-      document.addEventListener("touchmove", handleTouchMove);
+      document.addEventListener('touchmove', handleTouchMove)
       document.addEventListener(
-        "touchmove",
+        'touchmove',
         () => {
-          document.removeEventListener("mousemove", handleTouchMove);
+          document.removeEventListener('mousemove', handleTouchMove)
         },
-        { once: true }
-      );
+        {once: true},
+      )
     }
-  };
+  }
 
   const renderCards = (num: number): JSX.Element[] => {
-    const cards = [];
+    const cards = []
 
     while (cards.length < num) {
       cards.push(
@@ -77,12 +77,12 @@ const App: FC<{}> = () => {
             <div />
             <div />
           </div>
-        </div>
-      );
+        </div>,
+      )
     }
 
-    return cards;
-  };
+    return cards
+  }
 
   return (
     <>
@@ -102,10 +102,10 @@ const App: FC<{}> = () => {
         <div
           css={[
             page,
-            currentBreakpoint !== "SM" && pageMD,
-            currentBreakpoint === "LG" && pageLG,
+            currentBreakpoint !== 'SM' && pageMD,
+            currentBreakpoint === 'LG' && pageLG,
           ]}
-          style={{ width: `${size.w}px`, height: `${size.h}px` }}
+          style={{width: `${size.w}px`, height: `${size.h}px`}}
           ref={ref}
         >
           <div css={content}>
@@ -123,7 +123,7 @@ const App: FC<{}> = () => {
         </div>
       </div>
     </>
-  );
-};
+  )
+}
 
-export default App;
+export default App

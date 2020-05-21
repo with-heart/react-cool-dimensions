@@ -1,6 +1,6 @@
-import { css, keyframes } from "@emotion/core";
+import {css, keyframes} from '@emotion/core'
 
-import mq from "../utils/mq";
+import mq from '../utils/mq'
 
 const octocatWave = keyframes`
   0%,
@@ -15,7 +15,7 @@ const octocatWave = keyframes`
   80% {
     transform: rotate(10deg);
   }
-`;
+`
 
 export const octo = css`
   position: absolute;
@@ -24,7 +24,7 @@ export const octo = css`
   border: 0;
   fill: #151513;
   color: #fff;
-`;
+`
 
 export const octoArm = css`
   transform-origin: 130px 106px;
@@ -32,7 +32,7 @@ export const octoArm = css`
   ${mq.sm} {
     animation: none;
   }
-`;
+`
 
 export const github = css`
   position: absolute;
@@ -46,4 +46,4 @@ export const github = css`
       }
     }
   }
-`;
+`

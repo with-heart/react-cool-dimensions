@@ -1,14 +1,14 @@
-import { css } from "@emotion/core";
+import {css} from '@emotion/core'
 
-import mq from "../utils/mq";
+import mq from '../utils/mq'
 
-const { sm, md, lg } = mq;
+const {sm, md, lg} = mq
 
 export const root = css`
   body {
-    font-family: "Open Sans", sans-serif;
+    font-family: 'Open Sans', sans-serif;
   }
-`;
+`
 
 export const container = css`
   display: flex;
@@ -27,16 +27,16 @@ export const container = css`
     padding-left: 15%;
     padding-right: 15%;
   }
-`;
+`
 
 export const title = css`
   margin: 0 0 0.75rem;
   text-align: center;
-`;
+`
 
 export const subtitle = css`
   margin: 0 0 2.5rem;
-`;
+`
 
 export const banner = css`
   display: flex;
@@ -47,11 +47,11 @@ export const banner = css`
   font-weight: bold;
   color: #fff;
   background: #aaa;
-`;
+`
 
 export const cardWrapper = css`
   padding: 1rem;
-`;
+`
 
 export const card = css`
   &:not(:last-of-type) {
@@ -70,12 +70,12 @@ export const card = css`
       width: 70%;
     }
   }
-`;
+`
 
 export const page = css`
   position: relative;
   border: 1px solid #777;
-`;
+`
 
 export const pageMD = css`
   .css-${card.name} {
@@ -88,7 +88,7 @@ export const pageMD = css`
       flex: 1;
     }
   }
-`;
+`
 
 export const pageLG = css`
   .css-${banner.name} {
@@ -103,12 +103,12 @@ export const pageLG = css`
       margin-right: 0.5rem;
     }
   }
-`;
+`
 
 export const content = css`
   height: 100%;
   overflow-y: scroll;
-`;
+`
 
 export const controller = css`
   position: absolute;
@@ -120,4 +120,4 @@ export const controller = css`
   border-radius: 50%;
   border: 1px solid #777;
   cursor: nwse-resize;
-`;
+`

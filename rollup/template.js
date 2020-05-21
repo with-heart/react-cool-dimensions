@@ -1,5 +1,5 @@
 // eslint-disable-next-line @typescript-eslint/explicit-function-return-type
-export default ({ files }) => `
+export default ({files}) => `
   <!DOCTYPE html>
   <html lang="en">
     <head>
@@ -26,4 +26,4 @@ export default ({ files }) => `
       <script type="text/javascript" src=${files.js[0].fileName}></script>
     </body>
   </html>
-`;
+`

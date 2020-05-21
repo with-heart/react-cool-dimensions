@@ -1,12 +1,12 @@
-import React, { FC } from "react";
+import React, {FC} from 'react'
 
-import { github, octo, octoArm } from "./styles";
+import {github, octo, octoArm} from './styles'
 
 interface Props {
-  url: string;
+  url: string
 }
 
-const GitHubCorner: FC<Props> = ({ url }: Props) => (
+const GitHubCorner: FC<Props> = ({url}: Props) => (
   <a css={github} href={url} aria-label="View source on GitHub">
     <svg
       css={octo}
@@ -27,6 +27,6 @@ const GitHubCorner: FC<Props> = ({ url }: Props) => (
       />
     </svg>
   </a>
-);
+)
 
-export default GitHubCorner;
+export default GitHubCorner
